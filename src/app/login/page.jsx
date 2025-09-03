@@ -7,9 +7,9 @@ import "../styles/landing.css";
 
 export default function page() {
   return (
-    <div className="min-h-[90vh] sm:min-h-screen flex items-center justify-center opacity-0 animate-fadeIn">
+    <div className="min-h-[100dvh] sm:min-h-screen flex items-center justify-center opacity-0 animate-fadeIn">
       <div className="shadow flex items-center justify-around w-[90%]">
-        <div className="flex items-center justify-around flex-col text-center h-[80vh] sm:h-[90vh] sm:w-[50%]">
+        <div className="flex items-center justify-around flex-col text-center h-[90dvh] sm:h-[90vh] sm:w-[50%]">
           <h1 className="text-center text-accent font-gasoek text-4xl sm:text-5xl ">
             Mitrapets
           </h1>

@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
         accent: '#57CC99',
+        alert: '#B50003',
       },
       fontFamily: {
         gasoek: ['Gasoek One'],

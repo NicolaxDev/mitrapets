@@ -8,9 +8,26 @@ export default function GoogleLoginButton() {
 
   return (
     <GoogleLogin
-      onSuccess={(credentialResponse) => {
-        localStorage.setItem("token", credentialResponse.credential || "");
-        router.push("/");
+      onSuccess={async (credentialResponse) => {
+        try {
+          const res = await fetch("/api/auth/google", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ credential: credentialResponse.credential }),
+          });
+
+          const data = await res.json();
+
+          if (data.token) {
+            localStorage.setItem("token", data.token);
+            router.push("/");
+          } else {
+            router.push("/login");
+          }
+        } catch (err) {
+          console.error("Error en login:", err);
+          router.push("/login");
+        }
       }}
       onError={() => {
         router.push("/login");
